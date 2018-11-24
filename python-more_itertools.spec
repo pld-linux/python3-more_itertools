@@ -8,13 +8,14 @@
 Summary:	More routines for operating on iterables, beyond itertools
 Summary(pl.UTF-8):	Uzupełniające itertools dodatkowe funkcje do operowania na zmiennych iterowalnych
 Name:		python-more_itertools
-Version:	4.2.0
+Version:	4.3.0
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/more_itertools/
 Source0:	https://files.pythonhosted.org/packages/source/m/more_itertools/more-itertools-%{version}.tar.gz
-# Source0-md5:	5629c955d17df328ec534989f0649369
+# Source0-md5:	42157ef9b677bdf6d3609ed6eadcbd4a
+Patch0:		%{name}-tests.patch
 URL:		https://github.com/erikrose/more-itertools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -83,6 +84,7 @@ Dokumentacja API modułu Pythona more-itertools.
 
 %prep
 %setup -q -n more-itertools-%{version}
+%patch0 -p1
 
 %build
 %if %{with python2}
