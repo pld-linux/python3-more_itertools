@@ -8,14 +8,13 @@
 Summary:	More routines for operating on iterables, beyond itertools
 Summary(pl.UTF-8):	Uzupełniające itertools dodatkowe funkcje do operowania na zmiennych iterowalnych
 Name:		python-more_itertools
-Version:	4.3.0
+Version:	5.0.0
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/more_itertools/
 Source0:	https://files.pythonhosted.org/packages/source/m/more_itertools/more-itertools-%{version}.tar.gz
-# Source0-md5:	42157ef9b677bdf6d3609ed6eadcbd4a
-Patch0:		%{name}-tests.patch
+# Source0-md5:	f2ea58aa336ce6c13b7b225b3bbe305d
 URL:		https://github.com/erikrose/more-itertools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -27,7 +26,7 @@ BuildRequires:	python-six >= 1.0.0
 %endif
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3.2
+BuildRequires:	python3-modules >= 1:3.4
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-six >= 1.0.0
@@ -57,7 +56,7 @@ przepisy i procedury do pracy z pythonowymi zmiennymi iterowalnymi.
 Summary:	More routines for operating on iterables, beyond itertools
 Summary(pl.UTF-8):	Uzupełniające itertools dodatkowe funkcje do operowania na zmiennych iterowalnych
 Group:		Libraries/Python
-Requires:	python3-modules >= 1:3.2
+Requires:	python3-modules >= 1:3.4
 
 %description -n python3-more_itertools
 Python's itertools library is a gem - you can compose elegant
@@ -84,7 +83,6 @@ Dokumentacja API modułu Pythona more-itertools.
 
 %prep
 %setup -q -n more-itertools-%{version}
-%patch0 -p1
 
 %build
 %if %{with python2}
