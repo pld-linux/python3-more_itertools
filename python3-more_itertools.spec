@@ -16,9 +16,6 @@ Source0:	https://files.pythonhosted.org/packages/source/m/more_itertools/more-it
 URL:		https://github.com/erikrose/more-itertools
 BuildRequires:	python3-modules >= 1:3.4
 BuildRequires:	python3-setuptools
-%if %{with tests}
-BuildRequires:	python3-six >= 1.0.0
-%endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with doc}
