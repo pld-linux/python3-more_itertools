@@ -6,15 +6,15 @@
 Summary:	More routines for operating on iterables, beyond itertools
 Summary(pl.UTF-8):	Uzupełniające itertools dodatkowe funkcje do operowania na zmiennych iterowalnych
 Name:		python3-more_itertools
-Version:	7.2.0
-Release:	2
+Version:	8.1.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
-#Source0Download: https://pypi.org/simple/more_itertools/
+#Source0Download: https://pypi.org/simple/more-itertools/
 Source0:	https://files.pythonhosted.org/packages/source/m/more_itertools/more-itertools-%{version}.tar.gz
-# Source0-md5:	f647bfd27243a7bebe53b5ddb6a3b1c4
+# Source0-md5:	a552b06cec1bdf01d60f952dbcc9a021
 URL:		https://github.com/erikrose/more-itertools
-BuildRequires:	python3-modules >= 1:3.4
+BuildRequires:	python3-modules >= 1:3.5
 BuildRequires:	python3-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -22,7 +22,7 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	sphinx-pdg-3
 %endif
-Requires:	python3-modules >= 1:3.4
+Requires:	python3-modules >= 1:3.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,9 +53,14 @@ Dokumentacja API modułu Pythona more-itertools.
 %setup -q -n more-itertools-%{version}
 
 %build
-%py3_build %{?with_tests:test}
+%py3_build
+
+%if %{with tests}
+%{__python3} -m unittest discover -s tests
+%endif
 
 %if %{with doc}
+PYTHONPATH=$(pwd) \
 %{__make} -C docs html \
 	SPHINXBUILD=sphinx-build-3
 %endif
