@@ -6,23 +6,23 @@
 Summary:	More routines for operating on iterables, beyond itertools
 Summary(pl.UTF-8):	Uzupełniające itertools dodatkowe funkcje do operowania na zmiennych iterowalnych
 Name:		python3-more_itertools
-Version:	10.7.0
+Version:	10.8.0
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/more-itertools/
 Source0:	https://files.pythonhosted.org/packages/source/m/more_itertools/more_itertools-%{version}.tar.gz
-# Source0-md5:	62eb0a088624e979ae594a2de094ca1c
+# Source0-md5:	05fc46d7baf167d89c82a383c9f0c2fa
 URL:		https://github.com/erikrose/more-itertools
 BuildRequires:	python3-build
-BuildRequires:	python3-flit_core >= 3.2
+BuildRequires:	python3-flit_core >= 3.12
 BuildRequires:	python3-flit_core < 4
 BuildRequires:	python3-installer
 BuildRequires:	python3-modules >= 1:3.9
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 2.044
 %if %{with doc}
-BuildRequires:	python3-furo >= 2024.8
+BuildRequires:	python3-furo >= 2025.07.19
 BuildRequires:	sphinx-pdg-3
 %endif
 Requires:	python3-modules >= 1:3.9
